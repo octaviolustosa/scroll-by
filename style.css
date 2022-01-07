@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    display: grid;
+    place-items: center;
+    height: fit-content;
+    /* overflow-y: hidden; */
+}
+
+
+.slide-container {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.items {
+    display: flex;
+
+    overflow-x: auto;
+
+    scroll-snap-type: x mandatory; /*estálo em inglês - estalo ao soltar a imagem - 1º no elemento pai*/
+
+    -webkit-overflow-scrolling: touch; /*para habilitar em outros navegadores*/
+
+    scroll-behavior: smooth;
+}
+.item {
+    flex: none;
+
+    width: 100%;
+    height: 100vh;
+
+    scroll-snap-align: start; /*2º no elemento filho - start, irá se alinhar ao início da imagem*/
+
+    pointer-events: none;
+}
+
+img {
+    /* max-width: 1600px; */
+    /* max-height: 500px; */
+    width: 100%;
+    height: 100%;
+    
+    object-fit: contain;
+}
+
